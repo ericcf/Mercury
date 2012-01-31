@@ -1,0 +1,7 @@
+development:
+  adapter: mysql2
+  database: mercury_dev
+
+test:
+  adapter: mysql2
+  database: mercury_test

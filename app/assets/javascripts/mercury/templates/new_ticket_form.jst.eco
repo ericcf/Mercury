@@ -1,0 +1,13 @@
+<form class="form-stacked">
+  <fieldset>
+    <div class="clearfix">
+      <label for="comment">Please submit your comment, feature request or problem</label>
+      <div class="input">
+        <textarea name="comment" class="xxlarge" rows="5" />
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <input type="submit" class="submit btn primary" value="Submit">
+  </div>
+</form>
