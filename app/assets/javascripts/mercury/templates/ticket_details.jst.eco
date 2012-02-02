@@ -1,0 +1,16 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th>Created</th>
+      <th>Updated</th>
+    </tr>
+  </thead>
+  <% for ticket in @collection.models: %>
+    <tr>
+      <td><%= ticket.get("comment").teaser(5) %></td>
+      <td><%= ticket.get("created_at") %></td>
+      <td><%= ticket.get("updated_at") %></td>
+    </tr>
+  <% end %>
+</table>

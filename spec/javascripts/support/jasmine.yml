@@ -1,0 +1,16 @@
+src_dir:
+
+src_files:
+  - public/assets/application.js
+  - spec/javascripts/helpers/*.js
+
+stylesheets:
+
+helpers:
+
+spec_files:
+  - '**/*_spec.js'
+
+src_dir:
+
+spec_dir: spec/javascripts/compiled

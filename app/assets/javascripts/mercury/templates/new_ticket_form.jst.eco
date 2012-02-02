@@ -1,13 +1,18 @@
-<form class="form-stacked">
+<form class="">
   <fieldset>
-    <div class="clearfix">
-      <label for="comment">Please submit your comment, feature request or problem</label>
-      <div class="input">
-        <textarea name="comment" class="xxlarge" rows="5" />
+    <div class="control-group<%= if @errors.on("comment") then " error" else "" %>">
+      <label class="control-label" for="comment">Please submit your comment, feature request or problem</label>
+      <div class="controls">
+        <textarea name="comment" class="input-xxlarge" rows="5"><%= @model.get("comment") %></textarea>
       </div>
     </div>
-  </div>
-  <div class="actions">
-    <input type="submit" class="submit btn primary" value="Submit">
+    <div class="control-group">
+      <label class="control-label" for="email">To be notified of updates, please provide your e-mail (optional)</label>
+      <div class="controls">
+        <input name="email" type="text" class="input-xlarge" />
+      </div>
+  </fieldset>
+  <div class="form-actions">
+    <button type="submit" class="submit btn btn-primary">Submit</button>
   </div>
 </form>

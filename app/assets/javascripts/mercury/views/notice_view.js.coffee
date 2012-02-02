@@ -8,7 +8,7 @@ class Mercury.Views.NoticeView extends Backbone.View
 
   initialize: (@text) ->
     this.render()
-    $(@el).find(".alert-message").addClass("success")
+    $(@el).find(".alert").addClass("alert-success")
     this
 
   render: =>
@@ -19,5 +19,5 @@ class Mercury.Views.ErrorNoticeView extends Mercury.Views.NoticeView
 
   initialize: (@text) ->
     this.render()
-    $(@el).find(".alert-message").addClass("error")
+    $(@el).find(".alert").addClass("alert-error")
     this

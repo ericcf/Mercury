@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2'
 gem 'mysql2'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
 
@@ -20,7 +19,7 @@ end
 # gem 'capistrano'
 
 group :development, :test do
-  gem 'jasmine'
+  gem 'jasmine', git: 'git://github.com/pivotal/jasmine-gem.git'
   gem 'jasmine-headless-webkit'
   #gem 'ruby-debug19', require: 'ruby-debug'
 end
@@ -35,4 +34,5 @@ group :test do
   gem 'guard-coffeescript'
   gem 'guard-rails-assets'
   gem 'guard-jasmine-headless-webkit'
+  gem 'growl'
 end

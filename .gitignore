@@ -11,5 +11,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.jhw-cache
+.DS_Store
 
 chromedriver.log

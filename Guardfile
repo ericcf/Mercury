@@ -1,3 +1,15 @@
+guard 'rails-assets', run_on: [:start, :change], runner: :rails, rails_env: 'test' do
+  watch(%r{^app/assets/.+$})
+  watch('config/application.rb')
+end
+
+guard 'coffeescript', input: 'spec/javascripts', output: 'spec/javascripts/compiled'
+
+guard 'jasmine-headless-webkit' do
+  watch(%r{^public/assets/.*\.js}) { |m| newest_js_file("spec/javascripts/compiled/#{m[1]}_spec") }
+  watch(%r{^spec/javascripts/compiled/.*\.js})
+end
+
 guard :test do
   watch(%r{^lib/(.+)\.rb$})     { |m| "test/#{m[1]}_test.rb" }
   watch(%r{^test/.+_test\.rb$})

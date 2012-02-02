@@ -1,12 +1,14 @@
 class TicketsController < ApplicationController
 
   respond_to :html, only: :index
-  respond_to :json, only: :create
+  respond_to :json, only: [:index, :create]
 
   def index
+    respond_with Ticket.all
   end
 
   def show
+    respond_with Ticket.find(params[:id])
   end
 
   def create
@@ -17,9 +19,10 @@ class TicketsController < ApplicationController
     end
 
     if ticket.save
+      ticket.find_or_create_subscriber(params[:email])
       respond_with ticket
     else
-      render json: { error: errors_on(ticket) },
+      render json: { errors: ticket.errors, summary: errors_on(ticket) },
              status: :bad_request
     end
   end
